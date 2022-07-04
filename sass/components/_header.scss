@@ -1,0 +1,257 @@
+.header {
+  background-color: $white-color;
+  border-bottom: 1px solid #ececec;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: block;
+  font-family: 'Raleway';
+  text-decoration: none;
+  @include font(700, 24px, 1.17, 0.03em);
+  color: $accent-color;
+  @media screen and (min-width: 1200px) {
+    @include font(null, 26px, 1.19, null);
+  }
+}
+.logo__text {
+  color: #000000;
+}
+.header__logo {
+  @media screen and (min-width: 768px) {
+    margin-right: 88px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
+  }
+}
+.menu-btn {
+  cursor: pointer;
+  margin-left: auto;
+  background-color: $white-color;
+  border: none;
+  padding: 0;
+  fill: $title-color;
+  transition: fill $hover-efect;
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.navigation {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+.menu-list {
+  display: flex;
+}
+.menu-list__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.menu-list__link {
+  display: block;
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  @include font(500, 14px, 1.14, 0.02em);
+  color: $title-color;
+  transition: color $hover-efect;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.menu-list__link--current {
+  color: $accent-color;
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    border-radius: 2px;
+    background-color: $accent-color;
+  }
+}
+
+.contact-list {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    padding-top: 21px;
+    padding-bottom: 21px;
+    margin-left: auto;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    padding: 0;
+  }
+}
+.contact-list__link {
+  @media screen and (min-width: 768px) {
+    @include font(500, 12px, 1.17, 0.02em);
+  }
+  @media screen and (min-width: 1200px) {
+    @include font(500, 14px, 1.14, 0.02em);
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  display: flex;
+  align-items: center;
+  color: $primary-color;
+  transition: color $hover-efect;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+.contact-list__icon {
+  @media screen and (min-width: 768px) {
+    margin-right: 8px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-right: 10px;
+  }
+  fill: $primary-color;
+  transition: fill $hover-efect;
+  .contact-list__link:hover &,
+  .contact-list__link:focus & {
+    fill: $accent-color;
+  }
+}
+.contact-list__icon--envelope {
+  @media screen and (min-width: 768px) {
+    width: 14px;
+    height: 10px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 16px;
+    height: 12px;
+  }
+}
+.contact-list__icon--smartphone {
+  @media screen and (min-width: 768px) {
+    width: 10px;
+    height: 14px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 10px;
+    height: 16px;
+  }
+}
+
+.contact-list__item:not(:last-child) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-bottom: 10px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-right: 50px;
+  }
+}
+.mob-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $white-color;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.mob-menu__container {
+  width: 100%;
+  padding: 10px 15px 48px 40px;
+  margin: 0 auto;
+  @media screen and (min-width: 480px) {
+    max-width: 480px;
+  }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+.mob-menu__btn {
+  display: block;
+  padding: 0;
+  margin-left: auto;
+  height: 40px;
+  border: 0;
+  background-color: $white-color;
+  cursor: pointer;
+  transition: fill $hover-efect;
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+}
+.mob-nav {
+  margin-bottom: 50px;
+}
+.mob-nav__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+.mob-nav__link {
+  @include font(500, 40px, 1.18, 0.02em);
+  color: $title-color;
+}
+.mob-nav__link--current {
+  color: $accent-color;
+}
+.mob-contact {
+  margin-bottom: 64px;
+}
+.mob-contact__tel {
+  display: block;
+  @media screen and (max-width: 420px) {
+    @include font(500, 28px, 1.18, 0.02em);
+  }
+  @include font(500, 34px, 1.18, 0.02em);
+  color: $accent-color;
+}
+.mob-contact__mail {
+  display: block;
+  @include font(500, 24px, 1.17, 0.02em);
+  color: $primary-color;
+}
+.mob-contact__item {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+.mob-soc {
+  display: flex;
+}
+.mob-soc__link {
+  @media screen and (max-width: 420px) {
+    @include font(500, 12px, 1.22, 0.02em);
+  }
+  @include font(500, 18px, 1.22, 0.02em);
+  color: $accent-color;
+}
+.mob-soc__item {
+  &:not(:last-child) {
+    padding-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+    margin-right: 10px;
+  }
+}
+.no-scroll {
+  overflow: hidden;
+}

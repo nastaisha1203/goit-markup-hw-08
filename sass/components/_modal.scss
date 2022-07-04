@@ -1,0 +1,180 @@
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity $hover-efect, visibility $hover-efect;
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  @media screen and (min-width: 480px) {
+    width: 450px;
+    height: 609px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  background-color: $white-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform $hover-efect;
+}
+.modal-close-btn {
+  padding: 0;
+  height: 30px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  border: transparent;
+  background-color: $white-color;
+}
+.modal-close-icon {
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  transition: fill $hover-efect;
+  &:hover {
+    fill: $accent-color;
+  }
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+.modal-text {
+  @include font(700, 20px, 1.5, 0.03em);
+  @media screen and (min-width: 1200px) {
+    @include font(null, null, 1.15, null);
+  }
+  text-align: center;
+  margin-bottom: 12px;
+}
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+  outline: none;
+  transition: border-color $hover-efect, fill $hover-efect;
+  &:focus {
+    border-color: $accent-color;
+  }
+}
+.modal-label {
+  display: block;
+  @include font(400, 12px, 1.17, 0.01em);
+  color: $primary-color;
+  margin-bottom: 4px;
+}
+.modal-input-icon {
+  position: relative;
+  margin-bottom: 10px;
+}
+.modal-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  .modal-input:focus + & {
+    fill: $accent-color;
+  }
+}
+.modal-user-text {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  margin-bottom: 20px;
+  outline: none;
+  transition: border-color $hover-efect;
+  &:focus {
+    border-color: $accent-color;
+  }
+  &::placeholder {
+    @include font(400, 12px, 1.17, 0.01em);
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.check-container {
+  margin-bottom: 30px;
+}
+.check-text {
+  @extend %align-list;
+  flex-wrap: wrap;
+  text-align: center;
+  @include font(400, 12px, 1.17, 0.03em);
+  @media screen and (min-width: 1200px) {
+    @include font(null, 14px, 1.71, null);
+  }
+  color: $primary-color;
+}
+.check-item {
+  text-decoration: underline;
+  @include font(400, 12px, 1.17, 0.03em);
+  @media screen and (min-width: 1200px) {
+    @include font(null, 14px, 1.71, null);
+  }
+  color: $accent-color;
+}
+.check-icon {
+  fill: transparent;
+}
+.aaa {
+  display: flex;
+}
+.check-text-wrap {
+  width: 16px;
+  height: 15px;
+  border: 2px solid #000;
+  border-radius: 3px;
+  margin-right: 8px;
+  padding: 0;
+  @extend %align-list;
+  transition: border-color $hover-efect;
+}
+
+.input-checkbox:checked + .check-text span {
+  background-color: $accent-color;
+  border-color: transparent;
+}
+.input-checkbox:focus + .check-text span {
+  border-color: $accent-color;
+}
+.input-checkbox:checked + .check-text .check-icon {
+  fill: #ffffff;
+}
+.modal-btn {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+  padding: 10px 55px;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color $hover-efect;
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+  }
+}
